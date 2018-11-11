@@ -612,7 +612,7 @@ void Display() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glPushMatrix(); //ROOM1
-	//glRotatef(rotAng, 0, 1, 0);// Rotate room1 
+	glRotatef(rotAng, 0, 1, 0);// Rotate room1 
 	//jack
 	glPushMatrix();
 	glTranslated(0.7, 0.4, 0.6);
@@ -685,7 +685,7 @@ void Display() {
 	//ROOM NUMBER 2 BELOW///
 	//floor2
 	glPushMatrix(); //start room 2
-//	glRotatef(rotAng2, 0, 1, 0);
+        glRotatef(rotAng2, 0, 1, 0);
 	glPushMatrix();
 	glTranslatef(1.0f, 0, 0);
 	glColor3f(1.0f, 1.0f, 1.0f);
