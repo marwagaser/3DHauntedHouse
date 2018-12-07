@@ -7,12 +7,12 @@
 
 #define GLUT_KEY_ESCAPE 27
 #define DEG2RAD(a) (a * 0.0174532925)
-float rotAng=0;
+float rotAng = 0;
 float rotAng2 = 0;
 float rotAng3 = 0;
 float transx = 0;
 float _angle = -70.0f;
-float photox=1;
+float photox = 1;
 float lampY = 0;
 bool animateColors = false;
 bool animateRoom1 = false;
@@ -32,7 +32,7 @@ float doorColorGO = 0.2; // change till 1 then go back
 float jackColorRO = 0.1; // change till 1 then go back
 
 
-//ROOM 2 COLORS
+						 //ROOM 2 COLORS
 float bedColorB = 0.0;
 float comodoColorR = 0.1;
 float closetColorR = 0.0;
@@ -50,7 +50,7 @@ float lampBulbColorBO = 0.0;
 
 
 bool isColorReset = false;
-float butterflyX=0.6;
+float butterflyX = 0.6;
 
 
 class Vector3f {
@@ -180,7 +180,7 @@ void drawJack() {
 	glPopMatrix();
 }
 
-void drawTV(){
+void drawTV() {
 	glPushMatrix();
 	glTranslatef(0.5, 0.5, 0.2);
 	glScalef(0.2, 0.2, 0.2);
@@ -198,7 +198,7 @@ void drawChair(double topWid, double topThick, double legThick, double legLen) {
 	//back chair
 	glPushMatrix();
 	glRotated(90, 0.0f, 0.0f, 1);
-	glTranslatef(0.6f ,0.32f,0.0f);
+	glTranslatef(0.6f, 0.32f, 0.0f);
 	glScaled(topWid, topThick, topWid);
 	//glColor3f(0.3f, 0.0f, 0.4f);
 	glutSolidCube(1.0);
@@ -217,7 +217,7 @@ void drawChair(double topWid, double topThick, double legThick, double legLen) {
 	glPushMatrix();
 	glRotated(-90, 1.0f, 0.0f, 0.0f);
 	glTranslatef(0.0f, 0.3f, 0.6f); //ely fel nos byt3ml k2no z kol ma increase yrg3 wara
-	//float widthchair = topWid * 0.5;
+									//float widthchair = topWid * 0.5;
 	glScaled(topWid, topThick, topWid);
 	//glColor3f(0.4f, 0.20f, 0.42f);
 	glutSolidCube(1.0);
@@ -260,7 +260,7 @@ void drawTable(double topWid, double topThick, double legThick, double legLen) {
 
 
 void drawCloset() {
-	
+
 	glPushMatrix();
 	glTranslatef(0.2, 0.0f, 0.0f);
 	//door 1
@@ -426,9 +426,9 @@ void drawDoor() {
 
 void DrawComdo() {
 
-	
+
 	glPushMatrix();
-	glScalef(0.5,0.5,0.5);
+	glScalef(0.5, 0.5, 0.5);
 	//door 1
 	glPushMatrix();
 	glTranslatef(-0.3f, -0.2f, -0.29f);
@@ -462,7 +462,7 @@ void DrawComdo() {
 
 }
 
-void drawStandingLamp() { 
+void drawStandingLamp() {
 	glPushMatrix();
 	glScalef(0.9, 0.9, 0.9);
 	//basic 
@@ -523,7 +523,7 @@ void drawPhotoFrame() {
 	glPushMatrix();
 	glTranslatef(0.20f, 0.53f, 0.02f);
 	glScalef(0.03, 0.03, 0.03);
-	glColor3f(1.0f,1.00,0.00);
+	glColor3f(1.0f, 1.00, 0.00);
 	glutSolidSphere(0.5, 25, 25);
 	glPopMatrix();
 
@@ -574,7 +574,7 @@ void drawButterfly() {
 	glPushMatrix();
 	glTranslatef(1.6, 1.0, 0.9);
 	glScalef(0.1, 0.1, 0.1);
-	glColor3f(0.1f,1.0f,0.0f);
+	glColor3f(0.1f, 1.0f, 0.0f);
 	glutSolidCube(1.0);
 	glPopMatrix();
 
@@ -599,7 +599,7 @@ void drawButterfly() {
 	glTranslatef(1.6, 0.9, 0.9);
 	glScalef(0.5, 0.2, 0.07);
 	glColor3f(0.9, 0.1, 0.4);
-	glutSolidSphere(0.5,25,25);
+	glutSolidSphere(0.5, 25, 25);
 	glPopMatrix();
 
 	glPopMatrix();
@@ -613,7 +613,7 @@ void Display() {
 
 	glPushMatrix(); //ROOM1
 	glRotatef(rotAng, 0, 1, 0);// Rotate room1 
-	//jack
+							   //jack
 	glPushMatrix();
 	glTranslated(0.7, 0.4, 0.6);
 	glRotatef(rotAng, 0, 1, 0);
@@ -628,7 +628,7 @@ void Display() {
 	glTranslated(0.78, 0.38, 0.5);
 	glRotated(rotAng, 0, 1, 0);
 	glScalef(0.4, 0.4, 0.4);
-	glColor3f(0.5f,teapotColorG, 0.1f);
+	glColor3f(0.5f, teapotColorG, 0.1f);
 	glutSolidTeapot(0.08);
 	glPopMatrix();
 
@@ -656,7 +656,7 @@ void Display() {
 	glColor3f(0.3f, 0.0f, chairColorB);
 	drawChair(0.6, 0.02, 0.02, 0.3);
 	glPopMatrix();
-	
+
 	//floor
 	glPushMatrix();
 	glColor3f(1.0f, 1.0f, 1.0f);
@@ -680,12 +680,12 @@ void Display() {
 	glPopMatrix(); //finish room 1
 
 
-	////////////////////////////////////////////////////////
+				   ////////////////////////////////////////////////////////
 
-	//ROOM NUMBER 2 BELOW///
-	//floor2
+				   //ROOM NUMBER 2 BELOW///
+				   //floor2
 	glPushMatrix(); //start room 2
-        glRotatef(rotAng2, 0, 1, 0);
+	glRotatef(rotAng2, 0, 1, 0);
 	glPushMatrix();
 	glTranslatef(1.0f, 0, 0);
 	glColor3f(1.0f, 1.0f, 1.0f);
@@ -702,7 +702,7 @@ void Display() {
 
 	//back wall2
 	glPushMatrix();
-	glTranslatef(1.0f,0.0f,0.0f);
+	glTranslatef(1.0f, 0.0f, 0.0f);
 	glRotated(-90, 1.0, 0.0, 0.0);
 	glColor3f(1.0f, 1.0f, 1.0f);
 	drawWall(0.02);
@@ -711,8 +711,8 @@ void Display() {
 	//draw the bed
 	glPushMatrix();
 	glTranslatef(1.25f, 0.2f, 0.5f);
-	glRotatef(-rotAng2,0,1,0);
-	glScalef(0.5,0.5,0.5);
+	glRotatef(-rotAng2, 0, 1, 0);
+	glScalef(0.5, 0.5, 0.5);
 	glColor3f(0.3, 0.2, bedColorB);
 	drawBed(0.6, 0.02, 0.02, 0.3);
 	glPopMatrix();
@@ -728,7 +728,7 @@ void Display() {
 
 	//draw the photo frame
 	glPushMatrix();
-	glTranslatef(photox,0.0,0.0);
+	glTranslatef(photox, 0.0, 0.0);
 	drawPhotoFrame();
 	glPopMatrix();
 
@@ -752,7 +752,7 @@ void Display() {
 	//draw Comdo
 	glPushMatrix();
 	glTranslatef(1.2f, 0.0f, 0.9f);
-	glRotatef(rotAng2,0,1,0);
+	glRotatef(rotAng2, 0, 1, 0);
 	DrawComdo();
 	glPopMatrix();
 
@@ -764,13 +764,13 @@ void Display() {
 
 void Timer(int value) {
 	// set the enemy defender y loctation anywhere between 10 an 780
-	if (butterflyX > -0.8) {
-	
-		butterflyX = butterflyX -= 0.4;
+	/*if (butterflyX > -0.8) {
+
+	butterflyX = butterflyX -= 0.4;
 	}
 	else {
-		butterflyX = 0.2;
-	}
+	butterflyX = 0.2;
+	}*/
 	//P1X = rand() % 400 + 0;
 	//P1Y = rand() % 300 + 0;
 	// ask OpenGL to recall the display function to reflect the changes on the window
@@ -785,26 +785,32 @@ void Anim() {
 		if (transx < 0.511873)
 			transx += 0.0001;
 		else transx = 0;
-	rotAng += 0.1;
+		rotAng += 0.1;
 	}
 	if (animateRoom2 == true) {
-	rotAng2 += 0.08;
-	if (lampY < 0.5) {
-		lampY += 0.0001;
+		rotAng2 += 0.08;
+		if (lampY < 0.5) {
+			lampY += 0.0001;
+		}
+		else {
+			lampY = 0;
+		}
+		if (photox < 1.31575)
+			photox += 0.0001;
+		else
+			photox = 1.0;
+	}
+	rotAng3 += 0.1;
+	if (butterflyX > -0.8) {
+
+		butterflyX -= 0.4;
 	}
 	else {
-		lampY = 0;
+		butterflyX = 0.2;
 	}
-	if (photox < 1.31575)
-		photox += 0.0001;
-	else
-		photox = 1.0;
-	}
-	rotAng3 +=0.1;
-	
-	
-	
-	if (animateColors ==true) {
+
+
+	if (animateColors == true) {
 		if (isColorReset == false && tableColorR <1) {
 			tableColorR += 0.001;
 		}
@@ -897,17 +903,19 @@ void Anim() {
 
 	}
 
-	
 
-	std::cout << photox;
+
+	//std::cout << photox;
 	//std::cout << transx;
 	glutPostRedisplay();
 }
 
 void Keyboard(unsigned char key, int x, int y) {
 	float d = 0.01;
-
+	float sum = 0;
 	switch (key) {
+
+
 	case 'w':
 		camera.moveY(d);
 		break;
@@ -923,12 +931,15 @@ void Keyboard(unsigned char key, int x, int y) {
 	case 'q':
 		camera.moveZ(d);
 		break;
-	case 'e':
+	case 'e': {
 		camera.moveZ(-d);
+		sum = sum + 1;
+		//std::cout << sum<< " ";
 		break;
-	case 'v' :
+	}
+	case 'v':
 	{
-	
+
 		lampBulbColorB = lampBulbColorBO;
 		photoFrameColorR = photoFrameColorRO;
 		closetColorR = closetColorRO;
@@ -952,7 +963,57 @@ void Keyboard(unsigned char key, int x, int y) {
 		transx = 0;
 		break;
 	}
-	
+	case 't': { //top
+		camera.eye.x = 1.987919;
+		camera.eye.y = 5.408388;
+		camera.eye.z = 3.868812;
+		camera.center.x = 0.987904;
+		camera.center.y = 4.408356;
+		camera.center.z = 2.868804;
+		camera.up.x = 0;
+		camera.up.y = 1;
+		camera.up.z = 0;
+		break;
+
+	}
+	case 'i': { //right
+		camera.eye.x = 3.073942;
+		camera.eye.y = 1.564709;
+		camera.eye.z = 1.235439;
+		camera.center.x = 2.073938;
+		camera.center.y = 0.564705;
+		camera.center.z = 0.235447;
+		camera.up.x = 0.000000;
+		camera.up.y = 1.000000;
+		camera.up.z = 0.000000;
+		break;
+	}
+
+
+	case 'u': { //left
+		camera.eye.x = 0.980266;
+		camera.eye.y = 2.902935;
+		camera.eye.z = 2.705600;
+		camera.center.x = -0.019736;
+		camera.center.y = 1.902927;
+		camera.center.z = 1.705599;
+		camera.up.x = 0.000000;
+		camera.up.y = 1.000000;
+		camera.up.z = 0.000000;
+		break;
+	}
+			  //case 'h': {camera.eye.x = 0.762436; //keft 2
+			  //	camera.eye.y = 7.122324;
+			  //	camera.eye.z = 5.302084;
+			  //	camera.center.x = -0.237559;
+			  //	camera.center.y = 6.122304;
+			  //	camera.center.z = 4.302083;
+			  //	camera.up.x = 0.000000;
+			  //	camera.up.y = 1.000000;
+			  //	camera.up.z = 0.000000;
+			  //	break;
+			  //
+			  //}
 	case GLUT_KEY_ESCAPE:
 		exit(EXIT_SUCCESS);
 	}
@@ -999,7 +1060,7 @@ void KeyUp(unsigned char key, int x, int y) {
 		animateRoom1 = false;
 	}
 	if (key == 'n') {
-	
+
 		animateRoom2 = false;
 	}
 
